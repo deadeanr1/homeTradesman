@@ -1,0 +1,30 @@
+{
+  "name": "ng-suntehnicapp",
+  "dependencies": {
+    "angular": "1.5.5",
+    "angular-aria": "1.5.5",
+    "angular-bootstrap": "1.3.3",
+    "angular-i18n": "1.5.5",
+    "angular-ui-router": "0.3.0",
+    "angular-loading-bar": "0.9.0",
+    "angularMultipleSelect": "angular-multiple-select#^1.1.2",
+    "angular-local-storage": "^0.5.2",
+    "bootstrap": "3.3.6",
+    "bootstrap-ui-datetime-picker": "2.4.0"
+  },
+  "homepage": "https://github.com/deadeanr1/suntehnic",
+  "authors": [
+    "Andrian Boscanean <andrian.boscanean@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/resources/public/bower_components",
+    "test",
+    "tests"
+  ]
+}
