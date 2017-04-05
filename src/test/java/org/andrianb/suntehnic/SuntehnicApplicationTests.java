@@ -1,4 +1,4 @@
-package org.andrianb;
+package org.andrianb.suntehnic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
