@@ -20,6 +20,7 @@ public class User implements Serializable, UserDetails {
 
     @JsonIgnore
     private static final long serialVersionUID = 6534751544232619891L;
+    public static final String USER_ID = "user_id";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -24,7 +24,7 @@ public class Customer implements Serializable
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_details_id")
+    @JoinColumn(name = User.USER_ID)
     private User user;
 
     @OneToMany(mappedBy = Review.COLUMN_SUBMITTER, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
