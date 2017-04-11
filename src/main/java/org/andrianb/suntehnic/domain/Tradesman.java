@@ -14,13 +14,13 @@ import java.util.List;
 public class Tradesman implements Serializable {
     public static final String TABLE_NAME = "tradesman";
 
-    public static final String ID = "tradesman_id";
+    public static final String TRADESMAN_ID = "tradesman_id";
     public static final String BIDS = "bids";
     public static final String TITLE = "title";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = ID)
+    @Column(name = TRADESMAN_ID)
     private Long id;
 
     private String title;

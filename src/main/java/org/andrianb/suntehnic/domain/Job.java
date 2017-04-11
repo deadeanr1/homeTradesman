@@ -5,6 +5,7 @@ package org.andrianb.suntehnic.domain;
  */
 public class Job {
     public static final String COLUMN_SUBMITTER = "submitter";
+    public static final String JOB_ID = "job_id";
 
     private Customer owner;
 

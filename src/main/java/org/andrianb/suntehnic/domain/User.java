@@ -39,7 +39,7 @@ public class User implements Serializable, UserDetails {
    /* @ElementCollection
     @JoinTable(name="user_roles",
             joinColumns={@JoinColumn(name="user_id")},
-            inverseJoinColumns = @JoinColumn(name = "ID"))
+            inverseJoinColumns = @JoinColumn(name = "TRADESMAN_ID"))
     private Set<Role> roles;
    @ElementCollection*/
    @Enumerated(EnumType.STRING)
