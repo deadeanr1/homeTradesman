@@ -15,7 +15,7 @@ import static org.andrianb.suntehnic.domain.Tradesman.TRADESMAN_ID;
 @Entity
 @Table(name = "bid")
 public class Bid implements Serializable{
-    public static final String COLUMN_SUBMITTER = "submitter";
+    public static final String COLUMN_SUBMITTER = "bidder";
 
     public static final String COLUMN_ID = "bid_id";
     public static final String COLUMN_VALUE = "value";
@@ -35,7 +35,7 @@ public class Bid implements Serializable{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = TRADESMAN_ID, updatable = false, insertable = false)
-    private Tradesman owner;
+    private Tradesman bidder;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = JOB_ID, updatable = false, insertable = false)
@@ -43,12 +43,12 @@ public class Bid implements Serializable{
 
     //todo: add bid state published, accepted
 
-    public Tradesman getOwner() {
-        return owner;
+    public Tradesman getBidder() {
+        return bidder;
     }
 
-    public void setOwner(Tradesman owner) {
-        this.owner = owner;
+    public void setBidder(Tradesman bidder) {
+        this.bidder = bidder;
     }
 
     public Job getJob() {

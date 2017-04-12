@@ -1,6 +1,6 @@
 package org.andrianb.suntehnic.domain;
 
-import org.andrianb.suntehnic.domain.Review.Review;
+import org.andrianb.suntehnic.domain.Review.Feedback;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -27,20 +27,20 @@ public class Customer implements Serializable
     @JoinColumn(name = User.USER_ID)
     private User user;
 
-    @OneToMany(mappedBy = Review.COLUMN_SUBMITTER, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Review> reviews;
+    @OneToMany(mappedBy = Feedback.COLUMN_CUSTOMER, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Feedback> feedbacks;
 
     @OneToMany(mappedBy = Job.COLUMN_SUBMITTER, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Job> jobs;
 
-    public List<Review> getRatings()
+    public List<Feedback> getRatings()
     {
-        return reviews;
+        return feedbacks;
     }
 
-    public void setRatings(List<Review> reviews)
+    public void setRatings(List<Feedback> feedbacks)
     {
-        this.reviews = reviews;
+        this.feedbacks = feedbacks;
     }
 
     public void setJobs(List<Job> jobs)

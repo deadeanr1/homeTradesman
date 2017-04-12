@@ -15,7 +15,7 @@ import java.util.List;
 public class JobCategory implements Serializable{
     public static final String TABLE_NAME = "job_category";
 
-    public static final String COLUMN_ID = "solution_type_id";
+    public static final String COLUMN_ID = "job_category_id";
     public static final String COLUMN_TITLE = "title";
     public static final String COLUMN_DESCIPTION = "description";
 
@@ -33,7 +33,12 @@ public class JobCategory implements Serializable{
 
     @JsonIgnore
     @OneToMany(mappedBy = JobCategoryType.COLUMN_PARENT, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<JobCategoryType> taskTypes;
+    private List<JobCategoryType> categoryTypes;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = Tradesman.TRADESMAN_ID, updatable = false, insertable = false)
+    @JsonIgnore
+    private Tradesman specialist;
 
     public Long getId()
     {
@@ -50,9 +55,9 @@ public class JobCategory implements Serializable{
         this.title = title;
     }
 
-    public List<JobCategoryType> getTaskTypes()
+    public List<JobCategoryType> getCategoryTypes()
     {
-        return taskTypes;
+        return categoryTypes;
     }
 
     public String getDescription()
