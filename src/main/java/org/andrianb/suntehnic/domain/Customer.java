@@ -1,7 +1,5 @@
 package org.andrianb.suntehnic.domain;
 
-import org.andrianb.suntehnic.domain.Review.Feedback;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -68,9 +66,9 @@ public class Customer implements Serializable
     public void addJob(Job job)
     {
         this.jobs.add(job);
-        if (job.getOwner() != this)
+        if (job.getSubmitter() != this)
         {
-            job.setOwner(this);
+            job.setSubmitter(this);
         }
     }
 

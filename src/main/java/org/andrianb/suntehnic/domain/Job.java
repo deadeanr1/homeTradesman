@@ -41,7 +41,7 @@ public class Job {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = Customer.COLUMN_ID)
-    private Customer owner;
+    private Customer submitter;
 
 
     public String getPostCode()
@@ -86,12 +86,12 @@ public class Job {
         this.serviceType = serviceType;
     }
 
-    public Customer getOwner() {
-        return owner;
+    public Customer getSubmitter() {
+        return submitter;
     }
 
-    public void setOwner(Customer owner) {
-        this.owner = owner;
+    public void setSubmitter(Customer submitter) {
+        this.submitter = submitter;
     }
 
 }

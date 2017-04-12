@@ -1,7 +1,4 @@
-package org.andrianb.suntehnic.domain.Review;
-
-import org.andrianb.suntehnic.domain.Customer;
-import org.andrianb.suntehnic.domain.Job;
+package org.andrianb.suntehnic.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,15 +6,15 @@ import java.io.Serializable;
 import static org.andrianb.suntehnic.domain.Job.JOB_ID;
 
 /**
- * Created by User on 4/11/2017.
+ * Created by AndrianB on 4/11/2017.
  */
 
 @Entity
 @Table(name = Feedback.TABLE_NAME)
 public class Feedback implements Serializable {
-    public static final String TABLE_NAME = "rating";
+    public static final String TABLE_NAME = "feedback";
 
-    public static final String RATING_ID = "rating_id";
+    public static final String RATING_ID = "feedback_id";
     public static final String COLUMN_OWNER = "customer";
     public static final String COLUMN_SHORT_DESCRIPTION = "short_description";
     public static final String COLUMN_LONG_DESCRIPTION = "long_description";

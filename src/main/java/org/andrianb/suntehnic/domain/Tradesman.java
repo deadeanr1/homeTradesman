@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by User on 3/28/2017.
+ * Created by AndrianB on 3/28/2017.
  */
 @Entity
 @Table(name = Tradesman.TABLE_NAME)
