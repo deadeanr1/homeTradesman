@@ -1,6 +1,5 @@
 package org.andrianb.suntehnic.config;
 
-import org.andrianb.suntehnic.security.RestUnauthorizedEntryPoint;
 import org.andrianb.suntehnic.service.SunTehnicDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
