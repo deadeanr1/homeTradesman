@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
- * Created by User on 3/28/2017.
+ * Created by AndrianB on 3/28/2017.
  */
 @EnableWebSecurity
 @Configuration

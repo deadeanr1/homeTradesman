@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 /**
- * Created by User on 4/5/2017.
+ * Created by AndrianB on 4/5/2017.
  */
 
 @RestController

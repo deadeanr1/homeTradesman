@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * Created by User on 3/28/2017.
+ * Created by AndrianB on 3/28/2017.
  */
 @Service
 public class SunTehnicDetailsService implements UserDetailsService{
