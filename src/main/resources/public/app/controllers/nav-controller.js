@@ -8,7 +8,7 @@ angular.module('app.controllers',[])
     $scope.login = function() {
             var base64Credential = btoa($scope.user.username + ':' + $scope.user.password);
            // AuthService.authorization = 'Basic ' + base64Credential;
-              headers = {"Authorization": "Basic " + base64Credential};
+             var  headers = {"Authorization": "Basic " + base64Credential};
             $http({url:'login',
                     method: 'GET',
                     headers:headers}).success(function(res) {
