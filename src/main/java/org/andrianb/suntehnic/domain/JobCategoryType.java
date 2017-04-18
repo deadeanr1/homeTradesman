@@ -1,6 +1,9 @@
 package org.andrianb.suntehnic.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -27,7 +30,8 @@ public class JobCategoryType implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = JobCategory.COLUMN_ID)
-    //  @JsonIgnore
+   @JsonBackReference
+//      @JsonIgnore
     private JobCategory parent;
 
     public Long getId() {

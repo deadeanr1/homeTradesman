@@ -1,0 +1,29 @@
+<div class="jumbotron">
+    <form class="form-inline text-center">
+        <div class="form-group">
+            <div class="dropdown">
+                <p>{{categories}}</p>
+                <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="categoriesDropdown" data-toggle="dropdown" aria-expanded="true">
+                    {{category}}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="categoriesDropdown">
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="" ng-repeat="category in categories | orderBy:'title'"  ng-click="setCategory(category)">{{category.name}}</a>
+                        <!--ng-click="setCategory(category)"-->
+                    </li    >
+                </ul>
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+            <!--<input class="form-control input-lg" placeholder="Postcode"/>-->
+        <!--</div>-->
+        <div class="form-group">
+            <button class="btn btn-info btn-lg">
+                Go!
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+
+</div>

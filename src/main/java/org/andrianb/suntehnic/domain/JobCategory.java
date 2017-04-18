@@ -1,6 +1,7 @@
 package org.andrianb.suntehnic.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,7 +23,7 @@ public class JobCategory implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = COLUMN_ID)
-    @JsonIgnore
+   // @JsonIgnore
     private Long id;
 
     @Column(name = COLUMN_TITLE)
@@ -31,14 +32,15 @@ public class JobCategory implements Serializable{
     @Column(name = COLUMN_DESCIPTION)
     private String description;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = JobCategoryType.COLUMN_PARENT, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+ //   @JsonIgnore
+    @OneToMany(mappedBy = JobCategoryType.COLUMN_PARENT, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   @JsonManagedReference
     private List<JobCategoryType> categoryTypes;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = Tradesman.TRADESMAN_ID, updatable = false, insertable = false)
-    @JsonIgnore
-    private Tradesman specialist;
+    //@ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = Tradesman.TRADESMAN_ID, updatable = false, insertable = false)
+  //  @JsonIgnore
+   // private Tradesman specialist;
 
     public Long getId()
     {

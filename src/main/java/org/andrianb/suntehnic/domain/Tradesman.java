@@ -30,7 +30,10 @@ public class Tradesman implements Serializable {
     @JoinColumn(name = User.USER_ID)
     private User user;
 
-    @OneToMany(mappedBy = "specialist", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(name = "tradesman_categories", joinColumns = @JoinColumn(name = TRADESMAN_ID
+            , referencedColumnName = TRADESMAN_ID),
+            inverseJoinColumns = @JoinColumn(name = "job_category_id", referencedColumnName = JobCategory.COLUMN_ID))
     private List<JobCategory> jobCategory;
 
     @OneToMany(mappedBy = Bid.COLUMN_SUBMITTER, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
