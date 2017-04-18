@@ -24,19 +24,20 @@ import java.security.Principal;
 public class AccountController {
 
     @Autowired
-    private SunTehnicDetailsService userDetailsService;
+    private UserRepository userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value="register", method= RequestMethod.POST)
     public ResponseEntity<User> createUser(@RequestBody User user){
-        if (userDetailsService.loadUserByUsername(user.getUsername()) != null) {
+        if (userRepository.findOneByUsername(user.getUsername()) != null) {
             throw new RuntimeException("Username already exist");
         }
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return new ResponseEntity<User>(userDetailsService.save(user), HttpStatus.CREATED);
+
+        return new ResponseEntity<User>(userRepository.save(user), HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "login")//todo: implement jwt or tokenbased login

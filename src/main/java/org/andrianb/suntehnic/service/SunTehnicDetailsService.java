@@ -18,6 +18,10 @@ public class SunTehnicDetailsService implements UserDetailsService{
     @Autowired
     private UserRepository userRepository;
 
+    public SunTehnicDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
